@@ -76,19 +76,19 @@
 		</dependency>
 	</dependencies>
 	<scm>
-        <connection>scm:https://github.com/baikunthar/mediclaim.git</connection>
-        <url>https://github.com/baikunthar/mediclaim.git</url>
-        <developerConnection>scm:git:https://github.com/baikunthar/mediclaim.git</developerConnection>
+        <connection>scm:https://github.com/kvmohan/mediclaim.git</connection>
+        <url>https://github.com/kvmohan/mediclaim.git</url>
+        <developerConnection>scm:git:https://github.com/kvmohan/mediclaim.git</developerConnection>
       <tag>HEAD</tag>
       </scm>
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
-			<url>http://13.127.41.17:8081/nexus/content/repositories/snapshots</url>
+			<url>http://34.236.199.149:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 		<repository>
              <id>nexus</id>
-             <url>http://13.127.88.103:8081/nexus/content/repositories/releases</url>
+             <url>http://34.236.199.149:8081/nexus/content/repositories/releases</url>
        	     </repository>
 	</distributionManagement>
 	<build>
@@ -121,7 +121,7 @@
         		    <artifactId>flyway-maven-plugin</artifactId>
 			    <version>6.4.4</version>
 			    <configuration>
-                              <url>jdbc:mysql://13.127.88.103:3306</url>
+                              <url>jdbc:mysql://34.236.199.149:3306</url>
                               <user>claimuser1</user>
 		              <password>H@ckath0n</password>
 			      <schemas>
@@ -134,7 +134,7 @@
 		<artifactId>maven-release-plugin</artifactId>
 		<version>3.0.0-M1</version>
                 <configuration>
-		    <tagBase>https://github.com/baikunthar/mediclaim.git/tag</tagBase>
+		    <tagBase>https://github.com/kvmohan/mediclaim.git/tag</tagBase>
                      <releaseProfiles>release</releaseProfiles>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <pushChanges>false</pushChanges>
