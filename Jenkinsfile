@@ -3,7 +3,7 @@ pipeline {
 	stages {
       stage('Git Checkout') {
          steps {
-            git 'https://github.com/baikuntha-git/mediclaim.git'
+            git 'https://github.com/kvmohan/mediclaim.git'
 		}
 	}
 	stage('Build') {
@@ -13,16 +13,16 @@ pipeline {
 			}
 		}
 	}
-	stage("Quality Gate") {
+	/*stage("Quality Gate") {
             steps {
               timeout(time: 2, unit: 'MINUTES') {
                 waitForQualityGate abortPipeline: true
               }
             }
-          }
+          }*/
 	stage ('Deploy') {
 		steps {
-			sh '/opt/maven/bin/mvn clean deploy -Dmaven.test.skip=true'
+			sh '/opt/apache-maven-3.6.3/bin/mvn clean deploy -Dmaven.test.skip=true'
 		}
 	}
 	stage ('Release') {
@@ -30,11 +30,11 @@ pipeline {
 			sh 'export JENKINS_NODE_COOKIE=dontkillme ;nohup java -jar $WORKSPACE/target/*.jar &'
 		}
 	}
-	stage ('DB Migration') {
+/*	stage ('DB Migration') {
 		steps {
-			sh '/opt/maven/bin/mvn clean flyway:migrate'
+			sh '/opt/apache-maven-3.6.3/bin/mvn clean flyway:migrate'
 		}
-	}
+	}*/
 }
 	post {
         always {
