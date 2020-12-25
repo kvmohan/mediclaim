@@ -43,4 +43,13 @@ pipeline {
         }
     }*/
 
+	stage (confirmation)
+       {
+           steps{
+            mail (to: 'vamsikvm@gmail.com',
+            subject: "Job '${env.JOB_BASE_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
+            body: """STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'
+            Please go to console output of ${env.BUILD_URL}console to approve or Reject .""");
+            }
+       }
 }
