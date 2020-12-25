@@ -23,7 +23,7 @@ pipeline {
           }*/
 	stage ('Deploy') {
 		steps {
-			sh '/opt/apache-maven-3.6.3/bin/mvn clean package -Dmaven.test.skip=true'
+			sh '/opt/apache-maven-3.6.3/bin/mvn clean install -Dmaven.test.skip=true'
 		}
 	}
 	stage ('Release') {
