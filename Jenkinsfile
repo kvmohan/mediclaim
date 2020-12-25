@@ -6,14 +6,14 @@ pipeline {
             git 'https://github.com/kvmohan/mediclaim.git'
 		}
 	}
-	stage('Build') {
+	/*stage('Build') {
 		steps {
 			withSonarQubeEnv('sonar') {
 				sh '/opt/apache-maven-3.6.3/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
 			}
 		}
 	}
-	/*stage("Quality Gate") {
+	stage("Quality Gate") {
             steps {
               timeout(time: 2, unit: 'MINUTES') {
                 waitForQualityGate abortPipeline: true
