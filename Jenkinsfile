@@ -6,6 +6,9 @@ pipeline {
             git 'https://github.com/kvmohan/mediclaim.git'
 		}
 	}
+		options{
+			timestamps()
+		}
 	/*stage('Build') {
 		steps {
 			withSonarQubeEnv('sonar') {
